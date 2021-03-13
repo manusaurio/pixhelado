@@ -1,6 +1,7 @@
 package dev.manusaurio.app
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
+import dev.manusaurio.app.Projector.Companion.createProjector
 import org.hexworks.zircon.api.*
 import org.hexworks.zircon.api.application.AppConfig
 
@@ -14,18 +15,26 @@ class Canvas {
             }
         )
 
-        app.tileGrid.tileset = CP437TilesetResources.zilk16x16()
+        app.tileGrid.tileset = CP437TilesetResources.rogueYun16x16()
 
-        app.tileGrid.plotLine(0, 0, 10, 10);
-        app.tileGrid.plotLine(0, 0, 5, 10);
-        app.tileGrid.plotLine(0, 0, 15, 10);
-        app.tileGrid.plotLine(0, 0, 0, 10);
-        app.tileGrid.plotLine(0, 0, 10, 0);
+        val projector = app.tileGrid.createProjector()
 
         (app.tileGrid.width - 1).let { w ->
-            app.tileGrid.plotLine(w, w, w, 0);
-            app.tileGrid.plotLine(w, w, 0, w);
-            app.tileGrid.plotLine(w, w, w/2, w/2);
+            projector.run {
+                plotLine(0, 0, w, 0)
+                plotLine(w, 0, w, w)
+                plotLine(w, w, 0, w)
+                plotLine(0, w, 0, 0)
+
+                plotLine(0, 0, w/2, w)
+                plotLine(w/2, w+1, w, 0)
+
+                plotLine(55, w/2,-55, w/2)
+
+                plotLine(55, w/2 + 2, -55, w/2 + 2)
+            }
+
+
         }
     }
 }

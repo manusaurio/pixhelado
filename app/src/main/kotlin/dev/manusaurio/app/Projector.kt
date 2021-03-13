@@ -78,7 +78,7 @@ class Projector private constructor(
                 positions.getOrNull(x)?.getOrNull(y)?.let {
                     tileGrid.draw(tile, it)
                 }
-                
+
                 if (d > 0) {
                     x += xi
                     d += 2 * (dx - dy)
