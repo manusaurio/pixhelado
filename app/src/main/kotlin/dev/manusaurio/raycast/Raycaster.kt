@@ -1,4 +1,4 @@
-package dev.manusaurio.app
+package dev.manusaurio.raycast
 
 class Ray private constructor(
     val x: Int,
