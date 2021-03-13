@@ -50,7 +50,7 @@ class Projector private constructor(
             var y = y0
 
             for (x in x0..x1) {
-                positions.getOrNull(x)?.getOrNull(y)?.let {
+                positions.getOrNull(x, y)?.let {
                     tileGrid.draw(tile, it)
                 }
 
@@ -75,7 +75,7 @@ class Projector private constructor(
             var x = x0
 
             for (y in y0..y1) {
-                positions.getOrNull(x)?.getOrNull(y)?.let {
+                positions.getOrNull(x, y)?.let {
                     tileGrid.draw(tile, it)
                 }
 
