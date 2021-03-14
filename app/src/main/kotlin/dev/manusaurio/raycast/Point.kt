@@ -1,4 +1,4 @@
-package dev.manusaurio.app
+package dev.manusaurio.raycast
 
 import kotlin.math.sqrt
 
