@@ -26,7 +26,7 @@ fun main() {
         AppConfig.newBuilder().withSize(96, 64).build(),
         LwjglApplicationConfiguration().apply {
             backgroundFPS = 15
-            forceExit = true
+            forceExit = false
             // this is necessary in i3wm:
             resizable = false
 
